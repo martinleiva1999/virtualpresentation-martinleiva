@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación virtual - Martin</title>
+    <!-- Enlace a la hoja de estilos -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Librería FontAwesome para los íconos (LinkedIn, WhatsApp, Descargar) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <header>
+        <nav>
+            <div class="logo">Martin Leiva | Tech & Business</div>
+            <ul class="nav-links">
+                <li><a href="#inicio" class="nav-btn active" data-target="inicio">INICIO</a></li>
+                <li><a href="#sobre-mi" class="nav-btn" data-target="sobre-mi">SOBRE MÍ</a></li>
+                <li><a href="#skills" class="nav-btn" data-target="skills">EXPERTISE</a></li>
+                <li><a href="#resumen" class="nav-btn" data-target="resumen">TRAYECTORIA</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenedor Principal de las Vistas -->
+    <main>
+        <!-- SECCIÓN INICIO -->
+        <section id="inicio" class="tab-content active">
+            <div class="inicio-content">
+                <!-- Columna Izquierda: Texto -->
+                <div class="inicio-texto">
+                    <h1>Hola, bienvenido!</h1>
+                    
+                    <p class="descripcion">
+                        Soy un profesional apasionado por la tecnología, la innovación y la gestión de proyectos. Me motiva transformar ideas y necesidades de negocio en soluciones digitales que generen un impacto real.
+                    </p>
+                    
+                    <div class="contacto-info">
+                        <p>Puedes contactarme en:</p>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/alexanderleivamacetas/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://wa.me/51962236572" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <a href="mi_curriculum.pdf" download="CV_Martin_Leiva.pdf" class="btn-descargar">
+                        <i class="fas fa-download"></i> Descargar CV
+                    </a>
+                </div>
+
+                <!-- Columna Derecha: Foto Circular -->
+                <div class="inicio-imagen">
+                    <!-- Reemplaza "mi_foto.jpg" por el nombre de tu imagen -->
+                    <img src="mi_foto.png" alt="Foto de perfil">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SOBRE MÍ -->
+        <section id="sobre-mi" class="tab-content">
+            <div class="sobremi-content">
+                <!-- Columna Izquierda: Imagen Cuadrada con bordes redondeados -->
+                <div class="sobremi-imagen">
+                    <!-- Reemplaza "foto_sobremi.jpg" por el nombre de tu segunda foto -->
+                    <img src="mi_foto_2.jpg" alt="Foto Sobre Mí">
+                </div>
+                
+                <!-- Columna Derecha: Texto y Datos -->
+                <div class="sobremi-texto">
+                    <h2>Sobre mí</h2>
+                    <p>
+                        Me llamo Martin Alexander Leiva Macetas, soy una persona interesada en la tecnología y en cómo esta puede ayudar a resolver problemas y mejorar la forma en que hacemos las cosas. Durante mi experiencia profesional he podido participar en diferentes proyectos digitales, trabajando de cerca con equipos de negocio y tecnología. Me considero una persona responsable, curiosa y orientada a aprender constantemente. Me gusta asumir nuevos retos, trabajar en equipo y buscar soluciones que generen valor. Entre mis principales intereses se encuentran la gestión de proyectos, la inteligencia artificial, la transformación digital y el desarrollo de soluciones tecnológicas.</span>
+                    </p>
+                    
+                    <ul class="datos-personales">
+                        <li><i class="fas fa-angle-double-right"></i> <strong>Edad:</strong> 27 años</li>
+                        <li><i class="fas fa-angle-double-right"></i> <strong>Ciudad:</strong> Lima, Perú</li>
+                        <li><i class="fas fa-angle-double-right"></i> <strong>Correo:</strong> mleivamacetas@gmail.com</li>
+                        <li><i class="fas fa-angle-double-right"></i> <strong>Teléfono:</strong> (+51) 962 236 572</li>                        
+                    </ul>
+
+                    <p class="pasatiempos-titulo">Algunos de mis pasatiempos favoritos son:</p>
+                    
+                    <!-- Cuadrícula de Pasatiempos -->
+                    <div class="pasatiempos-grid">
+                        <div class="pasatiempo-item"><i class="fas fa-music"></i> Escuchar música</div>
+                        <div class="pasatiempo-item"><i class="fas fa-book-open"></i> Estudiar y aprender</div>
+                        <div class="pasatiempo-item"><i class="fas fa-running"></i> Realizar deporte</div>
+                        <div class="pasatiempo-item"><i class="fas fa-laptop-code"></i> Explorar tecnología</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SKILLS -->
+        <!-- SECCIÓN SKILLS -->
+        <section id="skills" class="tab-content">
+            <div class="skills-header">
+                <hr class="line">
+                <h2>Mis Habilidades</h2>
+                <hr class="line">
+            </div>
+
+            <!-- Cuadrícula de Habilidades (Tarjetas) -->
+            <div class="skills-grid">
+                <div class="skill-card" data-category="agiles">
+                    <i class="fas fa-project-diagram icon-main"></i>
+                    <span>Metodologías ágiles</span>
+                    <i class="fas fa-external-link-alt icon-link"></i>
+                </div>
+                <div class="skill-card" data-category="gestion">
+                    <i class="fas fa-tasks icon-main"></i>
+                    <span>Gestión de proyectos y productos</span>
+                    <i class="fas fa-external-link-alt icon-link"></i>
+                </div>
+                <div class="skill-card" data-category="crm">
+                    <i class="fas fa-cloud icon-main"></i>
+                    <span>CRM y Transformación Digital</span>
+                    <i class="fas fa-external-link-alt icon-link"></i>
+                </div>
+                <div class="skill-card" data-category="apis">
+                    <i class="fas fa-network-wired icon-main"></i>
+                    <span>APIs y Arquitectura Cloud</span>
+                    <i class="fas fa-external-link-alt icon-link"></i>
+                </div>
+                <div class="skill-card" data-category="ia">
+                    <i class="fas fa-robot icon-main"></i>
+                    <span>Inteligencia Artificial y Automatización</span>
+                    <i class="fas fa-external-link-alt icon-link"></i>
+                </div>
+                <div class="skill-card" data-category="datos">
+                    <i class="fas fa-chart-pie icon-main"></i>
+                    <span>Análisis de Datos</span>
+                    <i class="fas fa-external-link-alt icon-link"></i>
+                </div>
+                <div class="skill-card" data-category="diseno">
+                    <i class="fas fa-pen-nib icon-main"></i>
+                    <span>Diseño y Productividad</span>
+                    <i class="fas fa-external-link-alt icon-link"></i>
+                </div>
+            </div>
+
+            <!-- Botón para abrir Certificados -->
+            <div class="certificados-trigger-container">
+                <button id="btn-certificados" class="btn-certificados">
+                    Ver Certificados
+                </button>
+            </div>
+
+            <!-- Modal de Certificados (Scrollable y de 1 columna) -->
+            <div id="certificados-modal" class="modal">
+                <div class="modal-content certificados-modal-content">
+                    <span class="close-cert-btn">&times;</span>
+                    <h3>CURSOS</h3>
+                    <hr class="modal-divider">
+                    
+                    <!-- Contenedor con Scroll -->
+                    <div id="certificados-list" class="certificados-list">
+                        <!-- Los certificados se inyectarán aquí con JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ventana Modal (Pop-up oculto por defecto) -->
+            <div id="skills-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h3 id="modal-title">Habilidades</h3>
+                    <hr class="modal-divider">
+                    <div id="modal-body">
+                        <!-- Las barras de progreso se inyectarán aquí con JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN RESUMEN -->
+        <!-- SECCIÓN RESUMEN / TRAYECTORIA -->
+        <section id="resumen" class="tab-content">
+            <div class="skills-header">
+                <hr class="line">
+                <h2>Experiencia Profesional</h2>
+                <hr class="line">
+            </div>
+
+            <div class="timeline">
+                
+                <!-- EXPERIENCIA 1: Pacífico Seguros -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Business Specialist</h3>
+                        <div class="company-info">
+                            <span class="company-name"><i class="far fa-building"></i> Pacífico Seguros</span>
+                        </div>
+                        <div class="date-pill">
+                            <i class="far fa-calendar-alt"></i> Julio 2025 – Actualidad
+                        </div>
+                        <p class="company-desc">Empresa dedicada al rubro de seguros y reaseguros</p>
+                        <ul class="tasks-list">
+                            <li><i class="fas fa-check"></i> Lidero un equipo multidisciplinario (Backend, QA, Arquitecto, DevOps, entre otros) en las distintas iniciativas estratégicas que se van priorizando según el impacto que generen en la compañía, cumpliendo con el time to market en cada proyecto.</li>
+                            <li><i class="fas fa-check"></i> Me encuentro a cargo de iniciativas de evolución y mejora del CRM Oracle Sales & Service (Oracle CX Cloud), incluyendo cambios y adecuaciones sobre la interfaz Redwood. Coordino con equipos multidisciplinarios y diferentes Tribus para gestionar requerimientos, evaluar impactos y articular integraciones, buscando asegurar la correcta implementación de las soluciones y su alineación con las necesidades del negocio.</li>
+                            <li><i class="fas fa-check"></i> Coordino activamente con las distintas Tribus de la compañía respecto a las APIs y microservicios de las cuales somos owners como Squad para su integración con los distintos activos que requieren reutilizar nuestras soluciones tecnológicas.</li>
+                            <li><i class="fas fa-check"></i> Capacito constantemente a los ejecutivos de postventa debido a las mejoras implementadas en el CRM, asegurando un manejo eficiente y fortaleciendo la adopción de las nuevas funcionalidades.</li>
+                            <li><i class="fas fa-check"></i> Participé del programa “Houses of Knowledge” de Pacífico Seguros que busca capacitar y perfeccionar las habilidades de los colaboradores mediante el uso de tecnologías emergentes, formando parte de la línea de especialización en Inteligencia Artificial que nos reta a construir una solución transversal que aporte significativamente a la compañía.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCIA 2: RIMAC Seguros y Reaseguros -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Analista CRM</h3>
+                        <div class="company-info">
+                            <span class="company-name"><i class="far fa-building"></i> RIMAC Seguros y Reaseguros</span>
+                        </div>
+                        <div class="date-pill">
+                            <i class="far fa-calendar-alt"></i> Junio 2024 – Junio 2025
+                        </div>
+                        <p class="company-desc">Empresa dedicada al rubro de seguros y reaseguros</p>
+                        <ul class="tasks-list">
+                            <li><i class="fas fa-check"></i> Lideré el equipo de Soporte Salesforce de RIMAC Seguros y Reaseguros teniendo como objetivo el implementar mejoras y resolver incidentes en las distintas nubes de Salesforce como Sales Cloud, Service Cloud y Marketing Cloud.</li>
+                            <li><i class="fas fa-check"></i> Realicé el seguimiento y análisis de indicadores clave de venta y postventa, evaluando el impacto de las mejoras implementadas en los procesos para asegurar su efectividad y proponer nuevas acciones de implementación.</li>
+                            <li><i class="fas fa-check"></i> Estuve a cargo de proyectos para la optimización de procesos del área de postventa (Service Cloud) para la derivación de prospectos al área de ventas (Sales Cloud), así como la integración de la información de los sistemas Core de la compañía a la nube de Service Cloud.</li>
+                            <li><i class="fas fa-check"></i> Capacité a más de 500 asesores de postventa y canales de Fuerza de Ventas, buscando siempre garantizar la correcta adopción de procesos y herramientas implementadas por proyectos o mejoras.</li>
+                            <li><i class="fas fa-check"></i> Coordiné y definí las mejoras en los distintos flujos conversacionales del chatbot de la compañía, aplicando tecnologías basadas en IA como el NLP para optimizar la experiencia del usuario y la eficiencia del servicio.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCIA 3: MAPFRE Perú (Analista) -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Analista de Soporte Tecnológico e Inteligencia Comercial</h3>
+                        <div class="company-info">
+                            <span class="company-name"><i class="far fa-building"></i> MAPFRE Perú</span>
+                        </div>
+                        <div class="date-pill">
+                            <i class="far fa-calendar-alt"></i> Diciembre 2023 – Mayo 2024
+                        </div>
+                        <p class="company-desc">Empresa dedicada al rubro de seguros y reaseguros</p>
+                        <ul class="tasks-list">
+                            <li><i class="fas fa-check"></i> Trabajé con las mesas ágiles de un sistema ROPO y los eCommerce a través de la identificación de oportunidades de mejora, optimizando procesos y realizando las mediciones correspondientes de las mejoras desarrolladas como el tiempo del ciclo de las actividades, tiempo de respuesta de los servicios, entre otros.</li>
+                            <li><i class="fas fa-check"></i> Realicé múltiples capacitaciones a las redes comerciales digitales y tradicionales para que puedan hacer uso de la web y del app de la Plataforma Comercial de Referidos para el correcto uso de sus módulos y las mejoras implementadas con la mesa ágil.</li>
+                            <li><i class="fas fa-check"></i> Desarrollé reportes diarios para el área de Negocio Digital generando indicadores de valor que pudieran ser visualizados mediante dashboards dinámicos y automatizados con distintas herramientas digitales como Power Automate.</li>
+                            <li><i class="fas fa-check"></i> Suministré apoyo al área de Digital Growth respecto a un proyecto ETL para el procesamiento de data trascendental que facilitó el planteamiento de estrategias de acción para la toma de decisiones mediante los principios de las 5S.</li>
+                            <li><i class="fas fa-check"></i> Gestioné proyectos con el área de Marketing Digital y TI para la conexión de un API de registro de leads digitales a través de landings pages y/o formularios internos del corporativo de MAPFRE España.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCIA 4: MAPFRE Perú (Practicante Negocio Digital) -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Practicante en el área de Negocio Digital y Transformación</h3>
+                        <div class="company-info">
+                            <span class="company-name"><i class="far fa-building"></i> MAPFRE Perú</span>
+                        </div>
+                        <div class="date-pill">
+                            <i class="far fa-calendar-alt"></i> Junio 2023 – Noviembre 2023
+                        </div>
+                        <p class="company-desc">Empresa dedicada al rubro de seguros y reaseguros</p>
+                        <ul class="tasks-list">
+                            <li><i class="fas fa-check"></i> Trabajé con KPIs para medir el cumplimiento, efectividad y productividad de las redes comerciales digitales para identificar falencias y aplicar acciones de control.</li>
+                            <li><i class="fas fa-check"></i> Desarrollé darshboards comerciales que permitieron tomar decisiones frente a la ausencia de una correcta gestión de leads digitales, que impactaba directamente con la inversión de la pauta digital.</li>
+                            <li><i class="fas fa-check"></i> Brindé soporte en la generación de reportes e informes de los distintos proyectos digitales y/o pilotos del área, así como también al seguimiento de los mismos.</li>
+                            <li><i class="fas fa-check"></i> Apoyé en el manejo de las mesas ágiles utilizando la metodología Scrum y desenvolviéndome como Product Owner frente al equipo de trabajo y la SCRUM Master, para así generar mejoras de los sistemas utilizados, pensados para el usuario final.</li>
+                            <li><i class="fas fa-check"></i> Participé en la identificación y automatización de procesos comerciales mediante herramientas digitales, contribuyendo a la eficiencia operativa y reducción de tiempos manuales en la gestión de leads y seguimiento de resultados.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- EXPERIENCIA 5: MAPFRE Perú (Practicante Transformación Digital) -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Practicante en el área de Transformación Digital</h3>
+                        <div class="company-info">
+                            <span class="company-name"><i class="far fa-building"></i> MAPFRE Perú</span>
+                        </div>
+                        <div class="date-pill">
+                            <i class="far fa-calendar-alt"></i> Octubre 2022 – Mayo 2023
+                        </div>
+                        <p class="company-desc">Empresa dedicada al rubro de seguros y reaseguros</p>
+                        <ul class="tasks-list">
+                            <li><i class="fas fa-check"></i> Colaboré en la gestión de la Plataforma Comercial de Referidos (CRM de la compañía) cumpliendo con los requerimientos de las distintas redes comerciales digitales.</li>
+                            <li><i class="fas fa-check"></i> Generé propuestas de valor en proyectos del área, identificando oportunidades de mejora continua e impulsando cambios en coordinación con TI.</li>
+                            <li><i class="fas fa-check"></i> Participé de los distintos proyectos del área a través de la generación de ideas y propuestas de valor que permitieron identificar oportunidades de mejora continua.</li>
+                            <li><i class="fas fa-check"></i> Participé en mesas ágiles bajo metodología SCRUM, desempeñando un rol de Product Owner en iniciativas orientadas al usuario final.</li>
+                            <li><i class="fas fa-check"></i> Contribuí en la creación de un gestor de tareas utilizando herramientas digitales como Bizagi Modeler y Power Apps.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

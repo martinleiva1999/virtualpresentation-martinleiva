@@ -1,0 +1,809 @@
+/* Restablecer estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilos de la barra de navegación */
+header {
+    background-color: #0a0a10; 
+    color: #ffffff;
+    padding: 1.2rem 3rem; /* Un poco de respiro vertical */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    position: relative; /* Clave para el centrado absoluto de los enlaces */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    z-index: 2; /* Mantiene el logo clickeable y por encima */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 4rem; /* Separación amplia entre los enlaces */
+    
+    /* MAGIA PARA EL CENTRADO PERFECTO */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.15rem;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffffff; /* Reemplaza este valor por #ffffff o #14b8a6 si prefieres las otras opciones */
+}
+
+/* Contenedor principal */
+main {
+    padding: 1.5rem 3rem 4rem 3rem;
+    max-width: 1250px; /* Aumentamos el límite (antes era 1000px) para que vaya más a la izquierda */
+    margin: 0 auto;
+}
+
+/* Lógica de vistas (pestañas) */
+.tab-content {
+    display: none; /* Oculta todas las secciones por defecto */
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.tab-content.active {
+    display: block; /* Muestra solo la sección que tiene la clase active */
+}
+
+/* Animación de transición suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos extra para el contenido */
+h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #111; }
+h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #222; }
+.skills-list { margin-left: 1.5rem; margin-top: 1rem; }
+.skills-list li { margin-bottom: 0.5rem; }
+
+/* --- ACTUALIZADO: Contenedor a dos columnas más separadas --- */
+.inicio-content {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 4rem; /* Separación amplia entre texto e imagen */
+    margin-top: 1rem;
+    text-align: left; 
+}
+
+.inicio-texto {
+    flex: 1; /* El texto toma todo el espacio izquierdo disponible */
+    max-width: 650px; /* Evita que el texto se estire demasiado */
+}
+
+.inicio-content h1 {
+    font-size: 3rem;
+    color: #111;
+    margin-bottom: 1rem;
+}
+
+.descripcion {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+/* Sección de Contacto */
+.contacto-info {
+    margin-bottom: 2rem;
+}
+
+.contacto-info p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.8rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-start; /* Empuja los íconos a la izquierda */
+    gap: 1.5rem;
+}
+
+/* --- MAGIA PARA LA FOTO REDONDA --- */
+.inicio-imagen {
+    flex: 0 0 auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio-imagen img {
+    width: 380px;  /* El ancho DEBE ser igual al alto */
+    height: 380px; /* El alto DEBE ser igual al ancho */
+    border-radius: 50%; /* Esto es estrictamente lo que lo convierte en un círculo */
+    object-fit: cover; /* Esto recorta tu foto para que encaje perfecto sin achatarse ni deformarse */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Una ligera sombra para darle relieve */
+}
+
+.social-links a {
+    color: #0a0a10; /* Color inicial oscuro */
+    font-size: 2.5rem; /* Tamaño de los íconos */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    
+    transform: translateY(-5px); /* Pequeño salto hacia arriba */
+}
+
+/* Botón de Descargar CV */
+.btn-descargar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: #0a0a10; /* Color oscuro */
+    color: #ffffff;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-descargar:hover {
+    background-color: #14b8a6; 
+    color: #0a0a10; /* El texto se vuelve oscuro */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.4); /* Resplandor */
+}
+
+/* --- COLORES OFICIALES PARA LOS ÍCONOS DE REDES SOCIALES --- */
+
+/* Azul oficial de LinkedIn */
+.social-links a .fa-linkedin {
+    color: #0a66c2; 
+}
+
+/* Verde oficial de WhatsApp */
+.social-links a .fa-whatsapp {
+    color: #25d366; 
+}
+
+/* Opcional: Efecto al pasar el mouse (hover) para que brillen un poco en lugar de cambiar a color cyan */
+.social-links a:hover .fa-linkedin,
+.social-links a:hover .fa-whatsapp {
+    color: inherit; /* Anula el color cyan anterior si lo deseas */
+    filter: brightness(1.2); /* Los hace un poco más brillantes al pasar el cursor */
+}
+
+/* --- ESTILOS PARA LA SECCIÓN SOBRE MÍ --- */
+.sobremi-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    gap: 4rem; /* Separación entre la foto y el texto */
+    margin-top: 1rem;
+}
+
+/* Imagen cuadrada con bordes curvos */
+.sobremi-imagen {
+    flex: 0 0 auto;
+}
+
+.sobremi-imagen img {
+    width: 380px;
+    height: 380px; /* Igual al ancho para que sea un cuadrado perfecto */
+    object-fit: cover; /* Evita que la foto se deforme */
+    border-radius: 25px; /* AQUÍ ESTÁ EL TRUCO: Bordes redondeados en lugar de un círculo (50%) */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Columna de Texto */
+.sobremi-texto {
+    flex: 1;
+    text-align: left;
+}
+
+.sobremi-texto p {
+    font-size: 1.1rem;
+    color: #444; 
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    text-align: justify; /* Agrega esta línea */
+}
+
+.highlight-text {
+    color: #00bfff; /* Color cyan/azul claro para resaltar el texto */
+    font-weight: bold;
+}
+
+/* Lista de Datos Personales */
+.datos-personales {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.datos-personales li {
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espacio entre el ícono y el texto */
+}
+
+.datos-personales i {
+    color: #00bfff; /* Flechas dobles de color azul claro */
+    font-size: 0.9rem;
+}
+
+/* Pasatiempos */
+.pasatiempos-titulo {
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.pasatiempos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea exactamente 2 columnas */
+    gap: 1rem; /* Espacio entre las tarjetas */
+}
+
+.pasatiempo-item {
+    background-color: #0a0a10; /* Color oscuro como en tu referencia */
+    color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Espacio entre ícono y texto */
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pasatiempo-item:hover {
+    transform: translateY(-3px); /* Pequeño salto al pasar el mouse */
+    box-shadow: 0 5px 15px rgba(0, 229, 255, 0.2); /* Brillo cyan */
+}
+
+/* --- ESTILOS PARA LA SECCIÓN SKILLS --- */
+.skills-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.skills-header h2 {
+    font-size: 2.2rem;
+    color: #1e293b; /* Gris azulado muy elegante */
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.skills-header h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #2563eb; /* Tu nuevo color de acento */
+    border-radius: 2px;
+}
+
+.skills-header .line {
+    display: none; 
+}
+
+/* Cuadrícula de Tarjetas */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background-color: #080812;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    background-color: #111122;
+}
+
+.skill-card .icon-main {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: #2563eb; /* Tu color de acento unificado */
+}
+
+/* Colores específicos para algunos íconos para imitar tu imagen */
+.skill-card[data-category="agiles"] .icon-main { color: #ff5555; }
+.skill-card[data-category="gestion"] .icon-main { color: #55aaff; }
+.skill-card[data-category="crm"] .icon-main { color: #ffaa00; }
+.skill-card[data-category="datos"] .icon-main { color: #ffff55; }
+
+.skill-card span {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.1rem;
+    flex: 1;
+}
+
+.skill-card .icon-link {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+/* --- VENTANA MODAL (POP-UP) --- */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(3px); /* Efecto de desenfoque */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+    animation: fadeInModal 0.3s ease;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-content {
+    background-color: #050508;
+    color: #ffffff;
+    padding: 2rem;
+    border: 1px solid #333;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover { color: #ff0000; }
+
+.modal-divider {
+    border: none;
+    height: 1px;
+    background-color: #333;
+    margin: 1rem 0 1.5rem 0;
+}
+
+/* Barras de progreso dentro del Modal */
+.skill-bar-container {
+    margin-bottom: 1.5rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.skill-level {
+    font-style: italic;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+.progress-bg {
+    width: 100%;
+    background-color: #ffffff;
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #14b8a6;
+    width: 0%; /* Inicia en 0 para animación */
+    transition: width 1s ease-in-out;
+}
+
+/* --- ESTILOS PARA LA SECCIÓN RESUMEN / TRAYECTORIA --- */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 2rem;
+}
+
+/* La línea vertical de la línea de tiempo */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: #333;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* El círculo de la línea de tiempo (hueco como en tu imagen) */
+.timeline-dot {
+    position: absolute;
+    left: -2.45rem; 
+    top: 1.5rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff; /* Círculo interior blanco */
+    border: 3px solid #0055ff; /* Borde azul */
+    z-index: 2;
+}
+
+/* La caja de contenido de cada experiencia */
+.timeline-content {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #e5e7eb; /* Borde gris muy suave */
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra elegante y sutil */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    border-color: #0055ff; /* Borde azul al pasar el cursor */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+    font-size: 1.6rem;
+    color: #111111; /* Título del puesto oscuro */
+    margin-bottom: 0.5rem;
+}
+
+.company-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.company-name {
+    font-size: 1.1rem;
+    color: #555555; /* Gris oscuro para la empresa */
+    font-weight: 600;
+}
+
+/* Diseño de píldora para la fecha */
+.date-pill {
+    display: inline-block;
+    background-color: #f3f4f6; /* Fondo gris claro */
+    color: #0055ff; /* Texto azul */
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.company-desc {
+    font-size: 0.95rem;
+    color: #666666;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+/* Lista de tareas con viñetas personalizadas (Checkmarks) */
+.tasks-list {
+    list-style: none;
+}
+
+.tasks-list li {
+    display: flex;
+    align-items: flex-start; 
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    color: #333333; 
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-align: justify; /* Agrega esta línea */
+}
+
+.tasks-list li:last-child {
+    margin-bottom: 0;
+}
+
+.tasks-list li i {
+    color: #0055ff; 
+    margin-top: 0.3rem;
+    font-size: 1rem;
+}
+
+/* --- BOTÓN DE CERTIFICADOS --- */
+.certificados-trigger-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+/* --- BOTÓN DE CERTIFICADOS (Estilo Minimalista) --- */
+.btn-certificados {
+    background-color: transparent; /* Fondo transparente */
+    color: #000000; /* Letras negras */
+    border: 2px solid #000000; /* Borde negro de 2 píxeles */
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el cursor (Opcional pero recomendado por UX) */
+.btn-certificados:hover {
+    background-color: #000000; /* Se pinta de negro */
+    color: #ffffff; /* Las letras se vuelven blancas */
+    transform: translateY(-3px); /* Pequeño salto hacia arriba */
+}
+
+/* --- MODAL DE CERTIFICADOS --- */
+.certificados-modal-content {
+    max-width: 500px; /* Más angosto para forzar 1 sola columna */
+}
+
+.close-cert-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff; 
+    cursor: pointer; 
+    transition: color 0.3s ease;
+}
+
+.close-cert-btn:hover {
+    color: #ff0000; 
+}
+
+.certificados-modal-content h3 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Contenedor con Scroll */
+.certificados-list {
+    max-height: 60vh; /* Altura máxima para activar el scroll */
+    overflow-y: auto; /* Activa el scroll vertical */
+    padding-right: 1.5rem; /* Espacio para que el scroll no tape el texto */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Separación entre cada certificado */
+}
+
+/* Personalización del Scrollbar (Opcional, para que se vea moderno) */
+.certificados-list::-webkit-scrollbar {
+    width: 6px;
+}
+.certificados-list::-webkit-scrollbar-track {
+    background: #1e293b; 
+    border-radius: 4px;
+}
+.certificados-list::-webkit-scrollbar-thumb {
+    background: #3b82f6; 
+    border-radius: 4px;
+}
+
+/* Items del certificado (Diseño de línea de tiempo de 1 columna) */
+.cert-item {
+    position: relative;
+    border-left: 2px solid #333; /* Línea gris oscura */
+    padding-left: 1.5rem;
+}
+
+.cert-item::before {
+    content: '';
+    position: absolute;
+    left: -6px; /* Centrado sobre la línea */
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #3b82f6; /* Punto azul */
+    border-radius: 50%;
+}
+
+.cert-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+}
+
+.cert-inst {
+    font-size: 0.9rem;
+    color: #94a3b8; /* Gris claro */
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+}
+
+.cert-year {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+}
+
+.btn-pdf {
+    display: inline-block;
+    background: transparent;
+    color: #3b82f6;
+    border: 1px solid #3b82f6;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-pdf:hover {
+    background: #3b82f6;
+    color: #ffffff;
+}
+
+/* ========================================= */
+/* --- RESPONSIVIDAD (DISEÑO PARA MÓVILES) --- */
+/* ========================================= */
+
+@media screen and (max-width: 768px) {
+    /* 1. Ajustes del contenedor principal */
+    main {
+        padding: 2rem 1.5rem; /* Menos espacio a los lados en celular */
+    }
+
+    /* 2. Ajustes de la barra de navegación */
+    header {
+        padding: 1rem; /* Reducimos el grosor de la barra */
+    }
+
+    nav {
+        flex-direction: column; /* Apilamos el logo y los enlaces */
+        gap: 1rem;
+    }
+
+    .nav-links {
+        position: static; /* Quitamos el centrado absoluto que choca en móviles */
+        transform: none;
+        flex-wrap: wrap; /* Si los botones no entran, bajan a la siguiente línea */
+        gap: 1.2rem;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem; /* Letra un poco más pequeña para que encaje mejor */
+    }
+
+    /* 3. Ajustes de la sección INICIO */
+    .inicio-content {
+        flex-direction: column-reverse; /* ¡Truco! Ponemos la foto ARRIBA y el texto ABAJO en celulares */
+        gap: 2rem;
+        text-align: center; /* Centramos todo el texto */
+    }
+
+    /* Centramos los elementos del texto y el botón */
+    .inicio-texto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inicio-texto h1 {
+        font-size: 2.2rem; /* Título un poco más pequeño */
+    }
+
+    .contacto-info {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center; /* Centramos los íconos de LinkedIn y WhatsApp */
+    }
+
+    /* 4. Achicamos la foto para que no se salga de la pantalla */
+    .inicio-imagen img {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* 5. Ajustes de la sección SOBRE MÍ (Móviles) */
+    .sobremi-content {
+        flex-direction: column; /* Pone la foto arriba y el texto abajo */
+        gap: 2rem;
+    }
+
+    .sobremi-imagen img {
+        width: 100%;
+        max-width: 320px;
+        height: 320px;
+    }
+
+    .pasatiempos-grid {
+        grid-template-columns: 1fr; /* Cambia a una sola columna de pasatiempos en el celular */
+    }
+
+    .skills-grid { grid-template-columns: 1fr; }
+    .skills-header .line { width: 50px; }
+}
+
