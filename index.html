@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentación virtual - Martin</title>
-    <!-- Enlace a la hoja de estilos -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Librería FontAwesome para los íconos (LinkedIn, WhatsApp, Descargar) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Barra de Navegación -->
     <header>
         <nav>
             <div class="logo">Martin Leiva | Tech & Business</div>
@@ -23,12 +20,9 @@
         </nav>
     </header>
 
-    <!-- Contenedor Principal de las Vistas -->
     <main>
-        <!-- SECCIÓN INICIO -->
         <section id="inicio" class="tab-content active">
             <div class="inicio-content">
-                <!-- Columna Izquierda: Texto -->
                 <div class="inicio-texto">
                     <h1>Hola, bienvenido!</h1>
                     
@@ -49,24 +43,18 @@
                     </a>
                 </div>
 
-                <!-- Columna Derecha: Foto Circular -->
                 <div class="inicio-imagen">
-                    <!-- Reemplaza "mi_foto.jpg" por el nombre de tu imagen -->
                     <img src="mi_foto.png" alt="Foto de perfil">
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN SOBRE MÍ -->
         <section id="sobre-mi" class="tab-content">
             <div class="sobremi-content">
-                <!-- Columna Izquierda: Imagen Cuadrada con bordes redondeados -->
                 <div class="sobremi-imagen">
-                    <!-- Reemplaza "foto_sobremi.jpg" por el nombre de tu segunda foto -->
                     <img src="mi_foto_2.png" alt="Foto Sobre Mí">
                 </div>
                 
-                <!-- Columna Derecha: Texto y Datos -->
                 <div class="sobremi-texto">
                     <h2>Sobre mí</h2>
                     <p>
@@ -82,7 +70,6 @@
 
                     <p class="pasatiempos-titulo">Algunos de mis pasatiempos favoritos son:</p>
                     
-                    <!-- Cuadrícula de Pasatiempos -->
                     <div class="pasatiempos-grid">
                         <div class="pasatiempo-item"><i class="fas fa-music"></i> Escuchar música</div>
                         <div class="pasatiempo-item"><i class="fas fa-book-open"></i> Estudiar y aprender</div>
@@ -93,8 +80,6 @@
             </div>
         </section>
 
-        <!-- SECCIÓN SKILLS -->
-        <!-- SECCIÓN SKILLS -->
         <section id="skills" class="tab-content">
             <div class="skills-header">
                 <hr class="line">
@@ -102,7 +87,6 @@
                 <hr class="line">
             </div>
 
-            <!-- Cuadrícula de Habilidades (Tarjetas) -->
             <div class="skills-grid">
                 <div class="skill-card" data-category="agiles">
                     <i class="fas fa-project-diagram icon-main"></i>
@@ -141,42 +125,34 @@
                 </div>
             </div>
 
-            <!-- Botón para abrir Certificados -->
             <div class="certificados-trigger-container">
                 <button id="btn-certificados" class="btn-certificados">
                     Ver Certificados
                 </button>
             </div>
 
-            <!-- Modal de Certificados (Scrollable y de 1 columna) -->
             <div id="certificados-modal" class="modal">
                 <div class="modal-content certificados-modal-content">
                     <span class="close-cert-btn">&times;</span>
                     <h3>Mis Certificados</h3>
                     <hr class="modal-divider">
                     
-                    <!-- Contenedor con Scroll -->
                     <div id="certificados-list" class="certificados-list">
-                        <!-- Los certificados se inyectarán aquí con JavaScript -->
                     </div>
                 </div>
             </div>
 
-            <!-- Ventana Modal (Pop-up oculto por defecto) -->
             <div id="skills-modal" class="modal">
                 <div class="modal-content">
                     <span class="close-btn">&times;</span>
                     <h3 id="modal-title">Habilidades</h3>
                     <hr class="modal-divider">
                     <div id="modal-body">
-                        <!-- Las barras de progreso se inyectarán aquí con JavaScript -->
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN RESUMEN -->
-        <!-- SECCIÓN RESUMEN / TRAYECTORIA -->
         <section id="resumen" class="tab-content">
             <div class="skills-header">
                 <hr class="line">
@@ -186,7 +162,6 @@
 
             <div class="timeline">
                 
-                <!-- EXPERIENCIA 1: Pacífico Seguros -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -208,7 +183,6 @@
                     </div>
                 </div>
 
-                <!-- EXPERIENCIA 2: RIMAC Seguros y Reaseguros -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -230,7 +204,6 @@
                     </div>
                 </div>
 
-                <!-- EXPERIENCIA 3: MAPFRE Perú (Analista) -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -252,7 +225,6 @@
                     </div>
                 </div>
 
-                <!-- EXPERIENCIA 4: MAPFRE Perú (Practicante Negocio Digital) -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -274,7 +246,6 @@
                     </div>
                 </div>
 
-                <!-- EXPERIENCIA 5: MAPFRE Perú (Practicante Transformación Digital) -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">

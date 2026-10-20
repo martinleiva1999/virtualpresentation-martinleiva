@@ -1,30 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleccionar todos los enlaces de navegación y las secciones de contenido
+    
     const navButtons = document.querySelectorAll('.nav-btn');
     const tabContents = document.querySelectorAll('.tab-content');
 
     navButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            // Evitar que el navegador salte a la sección usando el ancla (#)
             e.preventDefault();
             
-            // 1. Limpiar la clase 'active' de todos los botones y secciones
+            
             navButtons.forEach(btn => btn.classList.remove('active'));
             tabContents.forEach(tab => tab.classList.remove('active'));
 
-            // 2. Agregar la clase 'active' al botón que fue clicado
             button.classList.add('active');
 
-            // 3. Obtener el ID de la sección objetivo y mostrarla
+            
             const targetId = button.getAttribute('data-target');
             document.getElementById(targetId).classList.add('active');
         });
     });    
 });
 
-// --- LÓGICA DE LA SECCIÓN DE HABILIDADES (MODAL Y BARRAS) ---
 
-// 1. Base de datos de tus habilidades con sus porcentajes
 const skillsData = {
     "agiles": [
         { name: "Agile", percent: 90 },
@@ -78,7 +74,7 @@ const skillsData = {
     ]
 };
 
-// Función para calcular el nivel de texto basado en el porcentaje
+
 function getSkillLevel(percent) {
     if (percent <= 50) return "Básico";
     if (percent <= 80) return "Intermedio";
@@ -92,20 +88,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
 
-    // 2. Evento: Al hacer clic en una tarjeta
+    
     cards.forEach(card => {
         card.addEventListener('click', () => {
             const categoryKey = card.getAttribute('data-category');
             const categoryTitle = card.querySelector('span').innerText;
             const skillsList = skillsData[categoryKey];
 
-            // Poner el título en el modal
+            
             modalTitle.innerText = categoryTitle;
 
-            // Limpiar contenido anterior
+            
             modalBody.innerHTML = '';
 
-            // Generar las barras de progreso
+            
             skillsList.forEach(skill => {
                 const levelText = getSkillLevel(skill.percent);
                 const htmlStr = `
@@ -122,10 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalBody.insertAdjacentHTML('beforeend', htmlStr);
             });
 
-            // Mostrar el modal
+            
             modal.classList.add('show');
 
-            // Pequeño truco para animar las barras de 0 al % correspondiente
+            
             setTimeout(() => {
                 const fills = modalBody.querySelectorAll('.progress-fill');
                 fills.forEach(fill => {
@@ -135,12 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Eventos para cerrar el Modal
+    
     closeBtn.addEventListener('click', () => {
         modal.classList.remove('show');
     });
 
-    // Cerrar si se hace clic afuera del recuadro negro
+    
     window.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.classList.remove('show');
@@ -148,15 +144,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// --- LÓGICA DEL MODAL DE CERTIFICADOS ---
 
-// Base de datos de tus certificados (Agrega o modifica los que necesites)
 const certificadosData = [
     { 
         titulo: "COPILOT STUDIO", 
         institucion: "HUMAN GROWTH", 
         anio: "2026", 
-        pdf: "Copilot IA Human Growth.pdf" // Cambia por el nombre real de tu archivo PDF
+        pdf: "Copilot IA Human Growth.pdf" 
     },
     { 
         titulo: "MICROSOFT COPILOT STUDIO", 
@@ -214,13 +208,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeCertBtn = document.querySelector('.close-cert-btn');
     const certListContainer = document.getElementById('certificados-list');
 
-    // Al hacer clic en el botón "Ver Certificados"
+    
     if (btnCertificados) {
         btnCertificados.addEventListener('click', () => {
             // Limpiar la lista antes de inyectar
             certListContainer.innerHTML = '';
 
-            // Generar el HTML para cada certificado en 1 sola columna
+            
             certificadosData.forEach(cert => {
                 const htmlStr = `
                     <div class="cert-item">
@@ -233,19 +227,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 certListContainer.insertAdjacentHTML('beforeend', htmlStr);
             });
 
-            // Mostrar el modal
+            
             certModal.classList.add('show');
         });
     }
 
-    // Cerrar el modal con la "X"
+    
     if (closeCertBtn) {
         closeCertBtn.addEventListener('click', () => {
             certModal.classList.remove('show');
         });
     }
 
-    // Cerrar el modal al hacer clic afuera
+    
     window.addEventListener('click', (e) => {
         if (e.target === certModal) {
             certModal.classList.remove('show');
